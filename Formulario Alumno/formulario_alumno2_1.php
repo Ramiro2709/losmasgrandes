@@ -1,6 +1,39 @@
-<?php
-function mostrar_alumno($Valor) {
+
+<html>
+<header>
+
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css" />
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <?php error_reporting(0); ?>
     
+<style>
+    #tx_error{color: red; margin-left: 10px;}
+    body{background-image: url(gradient1.jpg);}
+    nav{-webkit-border-radius: 51px 51px 0px 0px;}
+    .navbar-brand{margin: 0px; border-color: black; padding: 15px;}
+    .container{margin-top: 55px; padding:0px; background-color:#fff; padding-bottom: 35px; -webkit-border-radius: 51px 51px 51px 51px; /*background-image:url(indu2.jpg);background-repeat: no-repeat;background-size: cover;*/ -webkit-box-shadow: 15px 13px 26px 0px rgba(0,0,0,0.75);}
+    .datos{-webkit-border-radius: 15px;padding: 3px; border-style: none; background-color: rgba(0,0,0,0.1);}
+    .consulta{-webkit-border-radius: 25px;padding: 10px 45px 10px 45px; background-color:#fff; -webkit-box-shadow: 3px 1px 6px 0px rgba(0,0,0,0.35); border-style: none;}
+    #formulario{margin-left: 35px;}
+    button{padding: 10px 45px 10px 45px; background-color:#fff;-webkit-border-radius: 25px; margin-left: 35%;-webkit-box-shadow: 3px 1px 6px 0px rgba(0,0,0,0.35); border-style: none;}
+</style>
+<script type="text/javascript">
+    function limpiar(){
+            document.getElementById("DNI").value = null;
+            document.getElementById("Legajo").value = null;
+            document.getElementById("Nombre").innerHTML = "";
+            document.getElementById("f_nac").innerHTML = "";
+            document.getElementById("sexo").innerHTML = "";
+            document.getElementById("curso").innerHTML = "";
+            document.getElementById("preceptor").innerHTML = "";
+        }
+</script>
+</header>
+  
+<?php
+function mostrar_alumno() {
     $link = mysql_connect('localhost','root');
     $DNI = $_POST['DNI'] ;
     $Legajo = $_POST['Legajo'] ;
@@ -78,37 +111,6 @@ if(isset($_POST['submit']))
         mostrar_alumno();
     } 
 ?>
-<html>
-<header>
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css" />
-    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-    <?php error_reporting(0); ?>
-    
-<style>
-    #tx_error{color: red; margin-left: 10px;}
-    body{background-image: url(gradient1.jpg);}
-    nav{-webkit-border-radius: 51px 51px 0px 0px;}
-    .navbar-brand{margin: 0px; border-color: black; padding: 15px;}
-    .container{margin-top: 55px; padding:0px; background-color:#fff; padding-bottom: 35px; -webkit-border-radius: 51px 51px 51px 51px; /*background-image:url(indu2.jpg);background-repeat: no-repeat;background-size: cover;*/ -webkit-box-shadow: 15px 13px 26px 0px rgba(0,0,0,0.75);}
-    .datos{-webkit-border-radius: 15px;padding: 3px; border-style: none; background-color: rgba(0,0,0,0.1);}
-    .consulta{-webkit-border-radius: 25px;padding: 10px 45px 10px 45px; background-color:#fff; -webkit-box-shadow: 3px 1px 6px 0px rgba(0,0,0,0.35); border-style: none;}
-    #formulario{margin-left: 35px;}
-    button{padding: 10px 45px 10px 45px; background-color:#fff;-webkit-border-radius: 25px; margin-left: 35%;-webkit-box-shadow: 3px 1px 6px 0px rgba(0,0,0,0.35); border-style: none;}
-</style>
-<script type="text/javascript">
-    function limpiar(){
-            document.getElementById("DNI").value = null;
-            document.getElementById("Legajo").value = null;
-            document.getElementById("Nombre").innerHTML = "";
-            document.getElementById("f_nac").innerHTML = "";
-            document.getElementById("sexo").innerHTML = "";
-            document.getElementById("curso").innerHTML = "";
-            document.getElementById("preceptor").innerHTML = "";
-        }
-</script>
-</header>
-  
 
 <body>
 <div class="container">
