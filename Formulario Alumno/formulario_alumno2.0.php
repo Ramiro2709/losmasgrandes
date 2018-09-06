@@ -1,34 +1,3 @@
-<html>
-<header>
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css" />
-    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-    <?php error_reporting(0); ?>
-    
-<style>
-    #tx_error{color: red; margin-left: 10px;}
-    body{background-image: url(gradient1.jpg);}
-    nav{-webkit-border-radius: 51px 51px 0px 0px;}
-    .navbar-brand{margin: 0px; border-color: black; padding: 15px;}
-    .container{margin-top: 55px; padding:0px; background-color:#fff; padding-bottom: 35px; -webkit-border-radius: 51px 51px 51px 51px; /*background-image:url(indu2.jpg);background-repeat: no-repeat;background-size: cover;*/ -webkit-box-shadow: 15px 13px 26px 0px rgba(0,0,0,0.75);}
-    .datos{-webkit-border-radius: 15px;padding: 3px; border-style: none; background-color: rgba(0,0,0,0.1);}
-    .consulta{-webkit-border-radius: 25px;padding: 10px 45px 10px 45px; background-color:#fff; -webkit-box-shadow: 3px 1px 6px 0px rgba(0,0,0,0.35); border-style: none;}
-    #formulario{margin-left: 35px;}
-    button{padding: 10px 45px 10px 45px; background-color:#fff;-webkit-border-radius: 25px; margin-left: 35%;-webkit-box-shadow: 3px 1px 6px 0px rgba(0,0,0,0.35); border-style: none;}
-</style>
-<script type="text/javascript">
-    function limpiar(){
-            document.getElementById("DNI").value = null;
-            document.getElementById("Legajo").value = null;
-            document.getElementById("Nombre").innerHTML = "";
-            document.getElementById("f_nac").innerHTML = "";
-            document.getElementById("sexo").innerHTML = "";
-            document.getElementById("curso").innerHTML = "";
-            document.getElementById("preceptor").innerHTML = "";
-        }
-</script>
-</header>
-  
 <?php
 function mostrar_alumno($Valor) {
     
@@ -54,8 +23,8 @@ function mostrar_alumno($Valor) {
         return;
     } 
     //echo $link;
-    mysql_select_db('prueba_alumnos',$link);
-    $result = mysql_query("SELECT * FROM alumnos WHERE documento=$DNI AND legajo=$Legajo",$link);
+    mysql_select_db('datos_alumnos',$link);
+    $result = mysql_query("SELECT * FROM valumnos WHERE documento=$DNI AND legajo=$Legajo",$link);
 //echo $result;
 $row = mysql_fetch_row($result);
 //echo $row[0];
@@ -111,12 +80,44 @@ if(isset($_POST['submit']))
         mostrar_alumno();
     } 
 ?>
+<html>
+<header>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css" />
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <?php error_reporting(0); ?>
+    
+<style>
+    #tx_error{color: red; margin-left: 10px;}
+    body{background-image: url(gradient1.jpg);}
+    nav{-webkit-border-radius: 51px 51px 0px 0px;}
+    .navbar-brand{margin: 0px; border-color: black; padding: 15px;}
+    .container{margin-top: 55px; padding:0px; background-color:#fff; padding-bottom: 35px; -webkit-border-radius: 51px 51px 51px 51px; /*background-image:url(indu2.jpg);background-repeat: no-repeat;background-size: cover;*/ -webkit-box-shadow: 15px 13px 26px 0px rgba(0,0,0,0.75);}
+    .datos{-webkit-border-radius: 15px;padding: 3px; border-style: none; background-color: rgba(0,0,0,0.1);}
+    .consulta{-webkit-border-radius: 25px;padding: 10px 45px 10px 45px; background-color:#fff; -webkit-box-shadow: 3px 1px 6px 0px rgba(0,0,0,0.35); border-style: none;}
+    #formulario{margin-left: 35px;}
+    button{padding: 10px 45px 10px 45px; background-color:#fff;-webkit-border-radius: 25px; margin-left: 35%;-webkit-box-shadow: 3px 1px 6px 0px rgba(0,0,0,0.35); border-style: none;}
+</style>
+<script type="text/javascript">
+    function limpiar(){
+            document.getElementById("DNI").value = null;
+            document.getElementById("Legajo").value = null;
+            document.getElementById("Nombre").innerHTML = "";
+            document.getElementById("f_nac").innerHTML = "";
+            document.getElementById("sexo").innerHTML = "";
+            document.getElementById("curso").innerHTML = "";
+            document.getElementById("preceptor").innerHTML = "";
+        }
+</script>
+</header>
+  
+
 <body>
 <div class="container">
      <nav class ="navbar navbar-light bg-light">
              <a href="/" class="navbar-brand">Formulario de Consulta</a>     
      </nav><br>
-        <form name="" action="formulario_alumno.php" method="POST" id="formulario">
+        <form name="" action="formulario_alumno2_1.php" method="POST" id="formulario">
             <p>Nro de DNI: <br><input type="number" class="datos" id="DNI" name="DNI" placeholder="Ingrese solo numeros"></p>
             <p>Nro de Legajo: <br><input type="password" class="datos" id="Legajo" name="Legajo" placeholder="Ingrese solo numeros"></p> 
             <input type="submit" value="Consultar" class="consulta" name="submit" id="submit"> <span id="tx_error"></span>
