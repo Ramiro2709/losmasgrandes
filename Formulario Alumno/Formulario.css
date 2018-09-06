@@ -1,0 +1,36 @@
+.container_mio {
+	padding-left: 15px;
+}
+
+.form-control {
+	margin-bottom: 15px;
+	width: 200px;
+	height: 30px;
+}
+
+#Formulario {
+	display: none;
+}
+.table {
+	margin-top: 15px;
+}
+
+#botones {
+	margin: 30px;
+}
+
+.btn {
+	margin: 5px;
+}
+.table{
+	width: 600px;
+}
+.tablas {
+	margin: 20px;
+}
+#boton_guardar{
+	display: none;
+}
+#boton_cancelar{
+	display: none;
+}
